@@ -10,7 +10,7 @@ const style = {
 function Meme(props) {
 	const player = useAudioPlayer(props.sound);
 	return (
-		<TouchableHighlight onPress={() => player.play()}  >
+		<TouchableHighlight onPress={() => { player.play() }}  >
 			<Image source={props.thumbnail} style={style} />
 		</ TouchableHighlight>)
 }

@@ -12,7 +12,12 @@ function LogoTitle() {
         style={{ width: 50, height: 50 }}
         source={require('../assets/ok.png')}
       />
-      <Text> 阿尼凯斯喜欢秋葵 </Text>
+      <Text style={{
+        fontSize: 20,
+        fontWeight: 'bold',
+        color: 'white'
+      }}
+      > 阿尼凯斯喜欢秋葵 </Text>
       <Image
         style={{ width: 50, height: 50 }}
         source={require('../assets/ok.png')}
