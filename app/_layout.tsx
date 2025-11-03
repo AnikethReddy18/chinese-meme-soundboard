@@ -5,7 +5,7 @@ function LogoTitle() {
   return (
     <View style={{
       flexDirection: "row",
-      alignContent: "center",
+      alignItems: "center",
       justifyContent: "center",
     }}>
       <Image
@@ -22,11 +22,13 @@ function LogoTitle() {
 }
 
 export default function RootLayout() {
+
   return (
     <Stack
       screenOptions={{
         headerTitle: () => <LogoTitle />,
-        headerStyle: { backgroundColor: 'red' }
+        headerStyle: { backgroundColor: 'red' },
+        contentStyle: { backgroundColor: 'red' }
       }}
     />
   );
