@@ -1,4 +1,4 @@
-import { ScrollView, Text, View } from "react-native";
+import { ImageBackground, ScrollView, Text, View } from "react-native";
 import Meme from "../components/meme.jsx"
 
 
@@ -46,16 +46,15 @@ const data = [
 ];
 export default function Index() {
   return (
-    <View>
-      <ScrollView contentContainerStyle={{
-        flexDirection: "row",
-        flexWrap: "wrap",
-        justifyContent: "center",
-        rowGap: 10,
-        columnGap: 10
-      }}>
-        {data.map((item) => <Meme sound={item.sound} thumbnail={item.thumbnail} key={item.name} />)}
-      </ScrollView>
-    </View>
+    <ScrollView contentContainerStyle={{
+      flexDirection: "row",
+      flexWrap: "wrap",
+      justifyContent: "center",
+      rowGap: 10,
+      columnGap: 10,
+      backgroundColor: 'red'
+    }}>
+      {data.map((item) => <Meme sound={item.sound} thumbnail={item.thumbnail} key={item.name} />)}
+    </ScrollView>
   );
 }
