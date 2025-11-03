@@ -1,4 +1,4 @@
-import { FlatList, Text, View } from "react-native";
+import { ScrollView, Text, View } from "react-native";
 import Meme from "../components/meme.jsx"
 
 
@@ -53,7 +53,9 @@ export default function Index() {
         alignItems: "center",
       }}
     >
-      <FlatList data={data} renderItem={({ item }) => <Meme name={item.name} sound={item.sound} thumbnail={item.thumbnail} />} />
+      <ScrollView>
+        {data.map((item) => <Meme sound={item.sound} thumbnail={item.thumbnail} key={item.name} />)}
+      </ScrollView>
     </View>
   );
 }
