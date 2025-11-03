@@ -46,14 +46,14 @@ const data = [
 ];
 export default function Index() {
   return (
-    <View
-      style={{
-        flex: 1,
+    <View>
+      <ScrollView contentContainerStyle={{
+        flexDirection: "row",
+        flexWrap: "wrap",
         justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <ScrollView>
+        rowGap: 10,
+        columnGap: 10
+      }}>
         {data.map((item) => <Meme sound={item.sound} thumbnail={item.thumbnail} key={item.name} />)}
       </ScrollView>
     </View>
