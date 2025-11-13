@@ -1,6 +1,6 @@
-import { ImageBackground, ScrollView, Text } from "react-native";
+import { ScrollView } from "react-native";
+import { useAudioPlayer } from "expo-audio"
 import Meme from "../components/meme.jsx"
-
 
 const data = [
   {
@@ -45,6 +45,8 @@ const data = [
   }
 ];
 export default function Index() {
+  const audioPlayer = useAudioPlayer();
+
   return (
     <ScrollView contentContainerStyle={{
       flexDirection: "row",
@@ -53,7 +55,7 @@ export default function Index() {
       rowGap: 10,
       columnGap: 10,
     }}>
-      {data.map((item) => <Meme sound={item.sound} thumbnail={item.thumbnail} key={item.name} />)}
+      {data.map((item) => <Meme sound={item.sound} thumbnail={item.thumbnail} key={item.name} player={audioPlayer}/>)}
     </ScrollView>
   );
 }

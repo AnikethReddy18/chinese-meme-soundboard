@@ -1,5 +1,4 @@
-import { View, Text, Button, Image, TouchableHighlight } from "react-native"
-import { useAudioPlayer } from "expo-audio"
+import { Image, TouchableHighlight } from "react-native"
 
 const style = {
 	height: 200,
@@ -8,9 +7,14 @@ const style = {
 }
 
 function Meme(props) {
-	const player = useAudioPlayer(props.sound);
+	const player = props.player;
+
+	function playCurrentAudio(){
+		player.replace(props.sound)
+		player.play()
+	}
 	return (
-		<TouchableHighlight onPress={() => { player.play() }}  >
+		<TouchableHighlight onPress={playCurrentAudio}  >
 			<Image source={props.thumbnail} style={style} />
 		</ TouchableHighlight>)
 }
