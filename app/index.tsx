@@ -1,5 +1,5 @@
 import { useAudioPlayer } from "expo-audio";
-import { Image, ScrollView, TouchableHighlight } from "react-native";
+import { Image, ScrollView, TouchableHighlight, Text, View} from "react-native";
 import Meme from "../components/meme.jsx";
 
 const stop = require("../assets/images/stop.jpeg")
@@ -61,7 +61,21 @@ export default function Index() {
       <TouchableHighlight onPress={()=>audioPlayer.pause()} style={{ flexBasis: "100%", alignItems: "center" }}>
         <Image source={stop} style={{ width: 410, height: 200}} />
       </TouchableHighlight>
+
       {data.map((item) => <Meme sound={item.sound} thumbnail={item.thumbnail} key={item.name} player={audioPlayer}/>)}
+
+      <View style={{
+        paddingBottom: 30,
+      }}>
+        <Text style={{
+          fontSize: 20,
+          color: '#57f542',
+          fontWeight: "bold"
+
+        }}>
+          亲爱的同志，记得吃你的本达卡亚
+        </Text>
+      </View>
     </ScrollView>
   );
 }
