@@ -1,7 +1,8 @@
-import { ScrollView } from "react-native";
-import { useAudioPlayer } from "expo-audio"
-import Meme from "../components/meme.jsx"
+import { useAudioPlayer } from "expo-audio";
+import { Image, ScrollView, TouchableHighlight } from "react-native";
+import Meme from "../components/meme.jsx";
 
+const stop = require("../assets/images/stop.jpeg")
 const data = [
   {
     name: "bald dance",
@@ -44,6 +45,8 @@ const data = [
     sound: require("../assets/data/superidol/sound.mp3")
   }
 ];
+
+
 export default function Index() {
   const audioPlayer = useAudioPlayer();
 
@@ -55,6 +58,9 @@ export default function Index() {
       rowGap: 10,
       columnGap: 10,
     }}>
+      <TouchableHighlight onPress={()=>audioPlayer.pause()} style={{ flexBasis: "100%", alignItems: "center" }}>
+        <Image source={stop} style={{ width: 410, height: 200}} />
+      </TouchableHighlight>
       {data.map((item) => <Meme sound={item.sound} thumbnail={item.thumbnail} key={item.name} player={audioPlayer}/>)}
     </ScrollView>
   );
